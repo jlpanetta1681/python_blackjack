@@ -1,3 +1,5 @@
+import random
+
 print("Welcome to BlackJack")
 # create the classes
 class Card(object):
@@ -24,10 +26,17 @@ class Deck(object):
         for c in self.cards:
             c.show()
 
+    def shuffle(self):
+        for i in range(len(self.cards)-1, 0, -1):
+            r = random.randint(0, i)
+            self.cards[i], self.cards[r] = self.cards[r], self.cards[i]
+
 deck = Deck()
+deck.shuffle()
+
 deck.show()
-
-
 class Player(object):
     def __init__(self):
-        pass
+        self.hand = []
+        
+

@@ -21,6 +21,7 @@ class Deck(object):
         for s in ["Hearts", "Spades", "Diamonds", "Clubs"]:
             for v in range(1, 14):
                 self.cards.append(Card(s,v))
+
     
     def show(self):
         for c in self.cards:
@@ -35,12 +36,6 @@ class Deck(object):
         return self.cards.pop()
 
 
-# deck = Deck()
-# deck.shuffle()
-# # deck.show()
-# card = deck.draw()
-# card.show()
-
 class Player(object):
     def __init__(self):
         self.hand = []
@@ -51,5 +46,18 @@ class Player(object):
     
     def showHand(self):
         for card in self.hand:
-            card.show()    
+            card.show()  
+
+    def discard(self):
+        return self.hand.pop()
+
+
+
+
+
+deck = Deck()
+deck.shuffle()
+deck.show()
+card = deck.draw()
+card.show()
 

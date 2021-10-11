@@ -19,9 +19,8 @@ class Deck(object):
 
     def build(self):
         for s in ["Hearts", "Spades", "Diamonds", "Clubs"]:
-            for v in range(1, 14):
+            for v in [2.3,3,4,5,6,7,8,9,10,"jack","Queen","King", "Ace"]:
                 self.cards.append(Card(s,v))
-
     
     def show(self):
         for c in self.cards:

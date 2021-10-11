@@ -30,13 +30,26 @@ class Deck(object):
         for i in range(len(self.cards)-1, 0, -1):
             r = random.randint(0, i)
             self.cards[i], self.cards[r] = self.cards[r], self.cards[i]
+    
+    def draw(self):
+        return self.cards.pop()
 
-deck = Deck()
-deck.shuffle()
 
-deck.show()
+# deck = Deck()
+# deck.shuffle()
+# # deck.show()
+# card = deck.draw()
+# card.show()
+
 class Player(object):
     def __init__(self):
         self.hand = []
-        
+    
+    def draw(self, deck):
+        self.hand.append(deck.drawCard())
+    
+    
+    def showHand(self):
+        for card in self.hand:
+            card.show()    
 

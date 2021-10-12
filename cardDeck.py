@@ -1,16 +1,18 @@
 import random
+from typing import no_type_check
 
-print("Welcome to BlackJack")
-# create the classes
+values = {2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, "Jack":10, "Queen":10, "King":10, "Ace":1}
+
+
 class Card(object):
-    def __init__(self, suit, val):
+    def __init__(self, suit, val, rank):
         self.suit = suit
-        self.val = val
+        self.rank = rank
+        
     def show(self):
-        print ("{} of {}".format(self.val, self.suit))
+        print ("{} of {}".format(self.rank, self.suit))
     
-card = Card("Spades", 9)
-card.show()
+
 
 class Deck(object):
     def __init__(self):
@@ -36,12 +38,12 @@ class Deck(object):
 
 
 class Player(object):
-    def __init__(self):
+    def __init__(self, score):
         self.hand = []
-    
+        self.score = 0
+
     def draw(self, deck):
         self.hand.append(deck.drawCard())
-    
     
     def showHand(self):
         for card in self.hand:
@@ -51,12 +53,10 @@ class Player(object):
         return self.hand.pop()
 
 
-
-
-
-deck = Deck()
-deck.shuffle()
-deck.show()
-card = deck.draw()
-card.show()
-
+def deal(deck):
+    hand = []
+    for i in range(2):
+        card = deck.pop()
+        hand.append(card)
+       
+    print(deal(deck))

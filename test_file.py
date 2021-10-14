@@ -9,30 +9,27 @@ dealers_hand = []
 
 
 ## Deal the cards
-def dealCard(turn):
-    card = random.choice(deck)
-    turn.append(card)
-    deck.remove(card)
+while len(dealers_hand) != 2:
+    dealers_hand.append(random.randint(1, 11))
+    if len(dealers_hand) == 2:
+        print("Dealer has X &", dealers_hand[1] )
 
 
 # add up the points in the hands
-def total(turn):
-    total = 0
-    face = ["J", "Q", "K"]
-    for card in turn:
-        if card in range(1, 11):
-            total += card
-        elif card in face:
-            total += 1
-        else:
-            if total > 11:
-                total += 1
-            else:
-                total += 11
-                
+# def total(turn):
+#     total = 0
+#     face = ["J", "Q", "K"]
+#     for card in turn:
+#         if card in range(1, 11):
+#             total += card
+#         elif card in face:
+#             total += 1
+#         else:
+#             if total > 11:
+#                 total += 1
+#             else:
+#                 total += 11
 
 
-# check for a winner 
 
-
-# put it all together to play the game 
+# put it all together to play the game

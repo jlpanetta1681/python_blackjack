@@ -53,10 +53,10 @@ class Player(object):
         return self.hand.pop()
 
 
-def deal(deck):
-    hand = []
-    for i in range(2):
-        card = deck.pop()
+    def deal(deck):
+        hand = []
+        for i in range(2):
+            card = Deck.draw(Deck)
         hand.append(card)
        
-    print(deal(deck))
+    print(deal(Deck))

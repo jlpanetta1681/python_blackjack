@@ -32,7 +32,7 @@ elif sum(dealers_hand) > 21:
 # now the player totals
 while sum(player_hand) < 21:
     decision = str(input("Do you want to hit or stay? "))
-    if decision = "hit":
+    if decision =="hit":
         player_hand.append(random.randint(1, 11))
         print("you have a total of " + str(sum(player_hand)) + " from these cards ", player_hand)
     else:
@@ -40,24 +40,8 @@ while sum(player_hand) < 21:
         print("you have a total of " + str(sum(player_hand)) + " from these cards ", player_hand)
         if sum(dealers_hand) > sum(player_hand):
             print("Dealer wins!!")
-        ]else:
-        print("You win!!")
+        else:
+            print("You win!!")
         break
 
-# def total(turn):
-#     total = 0
-#     face = ["J", "Q", "K"]
-#     for card in turn:
-#         if card in range(1, 11):
-#             total += card
-#         elif card in face:
-#             total += 1
-#         else:
-#             if total > 11:
-#                 total += 1
-#             else:
-#                 total += 11
-
-
-
-# put it all together to play the game
+#
